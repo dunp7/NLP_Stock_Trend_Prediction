@@ -1,0 +1,31 @@
+Stt,Mã Cổ phiếu,Tên Công ty,Khối lượng lưu hành tính chỉ số,Tỷ lệ free-float làm tròn (%),Giới hạn tỷ trọng vốn hóa (%),Lĩnh vực
+1,ACB,Ngân hàng TMCP Á Châu,4466657912,90.0,100.0,Tài chính
+2,BCM,Tổng Công ty Đầu tư và Phát triển Công nghiệp - CTCP,1035000000,4.0,100.0,Bất động sản
+3,BID,Ngân hàng TMCP Đầu Tư và Phát triển Việt Nam,5700435900,4.0,100.0,Tài chính
+4,BVH,Tập Đoàn Bảo Việt,742322764,10.0,100.0,Tài chính
+5,CTG,Ngân Hàng TMCP Công Thương Việt Nam,5369991748,15.0,100.0,Tài chính
+6,FPT,CTCP FPT,1460464206,85.0,100.0,Công nghệ
+7,GAS,Tổng Công ty Khí Việt Nam - CTCP,2296739847,5.0,100.0,Sản xuất năng lượng
+8,GVR,Tập đoàn Công nghiệp Cao su Việt Nam - CTCP,4000000000,4.0,100.0,Sản xuất cao su
+9,HDB,Ngân hàng TMCP Phát triển Thành phố Hồ Chí Minh,2892550610,75.0,100.0,Tài chính
+10,HPG,CTCP Tập Đoàn Hòa Phát,6396250200,55.0,100.0,Sản xuất thép
+11,MBB,Ngân hàng TMCP Quân Đội,5287084052,55.0,100.0,Tài chính
+12,MSN,CTCP Tập Đoàn Masan,1438351617,45.0,100.0,Sản xuất hàng tiêu dùng
+13,MWG,CTCP Đầu Tư Thế Giới Di Động,1461915388,80.0,100.0,Bán lẻ
+14,PLX,Tập đoàn Xăng dầu Việt Nam,1270592235,10.0,100.0,Sản xuất năng lượng
+15,POW,Tổng Công ty Điện lực Dầu khí Việt Nam - CTCP,2341871600,25.0,100.0,Sản xuất năng lượng
+16,SAB,Tổng CTCP Bia - Rượu - Nước giải khát Sài Gòn,1282562372,11.0,100.0,Sản xuất hàng tiêu dùng
+17,SHB,Ngân hàng TMCP Sài Gòn - Hà Nội,3662412356,85.0,100.0,Tài chính
+18,SSB,Ngân hàng TMCP Đông Nam Á,2495700000,60.0,100.0,Tài chính
+19,SSI,CTCP Chứng Khoán SSI,1509138669,70.0,100.0,Tài chính
+20,STB,Ngân hàng TMCP Sài Gòn Thương Tín,1885215716,100.0,100.0,Tài chính
+21,TCB,Ngân hàng TMCP Kỹ Thương Việt Nam,7045021622,65.0,100.0,Tài chính
+22,TPB,Ngân hàng TMCP Tiên Phong,2201635009,50.0,100.0,Tài chính
+23,VCB,Ngân hàng TMCP Ngoại Thương Việt Nam,5589091262,11.0,100.0,Tài chính
+24,VHM,CTCP Vinhomes,4354367488,30.0,100.0,Bất động sản
+25,VIB,Ngân hàng TMCP Quốc tế Việt Nam,2536807534,45.0,100.0,Tài chính
+26,VIC,Tập Đoàn Vingroup - CTCP,3823661561,30.0,100.0,Other
+27,VJC,CTCP Hàng không Vietjet,541611334,55.0,100.0,Hàng không
+28,VNM,CTCP Sữa Việt Nam,2089955445,40.0,100.0,Sản xuất hàng tiêu dùng
+29,VPB,Ngân hàng TMCP Việt Nam Thịnh Vượng,7933923601,60.0,100.0,Tài chính
+30,VRE,CTCP Vincom Retail,2272318410,40.0,100.0,Bán lẻ
