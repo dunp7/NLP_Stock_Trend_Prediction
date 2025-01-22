@@ -17,7 +17,7 @@ def timer(title):
             self.y_test = y_test
 
             
-    def model_selection(self, model='Random Forest Optuna', param=None, verbose=True, n_trials=100, distance='euclidean', version='normal', plot=False, method='both',num_prediction = 5):
+def model_selection(self, model='Random Forest Optuna', param=None, verbose=True, n_trials=100, distance='euclidean', version='normal', plot=False, method='both',num_prediction = 5):
     with timer(model):
         model_name, model_func = self.model_mapping(model)
         if 'Optuna' in model_name:
@@ -39,7 +39,7 @@ def timer(title):
 
     return acc, report
 
-    def model_mapping(self, model):
+def model_mapping(self, model):
     mapping = {
         'Logistic Regression': LogisticRegression,
         'Random Forest': RandomForestClassifier,
@@ -53,7 +53,7 @@ def timer(title):
     }
         return model, mapping[model]
 
-    def train_and_report(self, model, param, verbose=False):
+def train_and_report(self, model, param, verbose=False):
         clf = model(**param)
         clf.fit(self.X_train, self.y_train)
         y_pred = clf.predict(self.X_test)

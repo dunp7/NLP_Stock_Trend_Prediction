@@ -12,8 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 # Other
 import time
 from tqdm import tqdm
-from .utils import setup_driver, get_headers, Crawling_pipeline
-import os
+
 
 
 

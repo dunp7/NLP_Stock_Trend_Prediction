@@ -33,7 +33,7 @@ def setup_driver():
     Function to set up driver for Selenium
     """
     options = Options()
-    options.add_argument("--headless")  # Run in headless mode
+    # options.add_argument("--headless")  # Run in headless mode
     options.add_argument("--no-sandbox")  # Bypass OS security model
     options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource problems
     options.add_argument("--remote-debugging-port=9222")  # Enable remote debugging

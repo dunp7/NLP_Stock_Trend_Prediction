@@ -1,0 +1,112 @@
+# # Dataframe
+import pandas as pd
+
+# Web Crawling
+import requests
+from bs4 import BeautifulSoup
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+# Other
+import time
+from tqdm import tqdm
+from utils import get_headers, setup_driver
+import urllib.parse
+
+
+
+
+class vn_investing_crawl():
+
+    def __init__(self):
+        self.driver = setup_driver()
+        self._data = {
+            "href": [], 
+            "title" : [],
+            "publish_date" : [],
+            "content": [],
+            "keyword": []
+        }
+    
+    def get_data(self):
+        return self._data
+
+    def decode_keyword(self, keyword):
+        return urllib.parse.quote(keyword)
+    
+
+    def collect_news_links(self, waiting_time=20):
+        """
+        waiting_time : mỗi giây web sẽ tự query nhiều news link -> set time cho phù hợp
+        
+        """
+
+        # Scroll to bottom
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(waiting_time)
+
+        news_container = self.driver.find_element(
+            By.XPATH, "//*[@id='fullColumn']/div/div[4]"
+        )
+        news_articles = news_container.find_elements(By.CLASS_NAME, "articleItem")
+        
+        return news_articles
+    
+    def scraping_news_link(self, news):
+        
+        news_div = news.find_element(By.CLASS_NAME, 'textDiv')
+        title = news_div.find_element(By.CLASS_NAME, "title").text
+        href = news_div.find_element(By.CLASS_NAME, "title").get_attribute("href")
+        publish_date = news_div.find_element(By.CLASS_NAME, "date").text
+
+
+
+
+        # headers = get_headers()
+        # response = requests.get(href, headers=headers)
+        # soup = BeautifulSoup(response.content, 'html.parser')
+
+        # article_container = soup.find("div",class_ = "min-w-0")
+        # if article_container:
+        #     content = article_container.find("div", class_ = "relative flex flex-col").get_text(strip=True)
+        # else:
+        #     content = "No content Found"
+        content = 0
+
+        return href, title, publish_date, content
+
+
+
+    def scraping_news_with_keyword(self, keyword):
+
+        # Access to news with predefined keyword
+        self.driver.get(f"https://vn.investing.com/search/?q={self.decode_keyword(keyword)}&tab=news")
+        time.sleep(2)
+
+
+        news_articles = self.collect_news_links(5)
+        with tqdm(desc="Scraping News Pages", total=len(news_articles) ,unit="page") as pbar:
+            for news in news_articles:
+    
+                href,title,publish_date,content = self.scraping_news_link(news)
+                self._data['href'].append(href)
+                self._data['title'].append(title)
+                self._data['publish_date'].append(publish_date)
+                self._data['content'].append(content)
+                self._data['keyword'].append(keyword)
+                pbar.update(1)
+        print(f"Finish crawling with {keyword}")
+
+if __name__ == '__main__':
+
+    crawler = vn_investing_crawl()
+    for keyword in ['Vàng', 'Dầu']:
+        crawler.scraping_news_with_keyword(keyword)
+    
+    data = crawler.get_data()
+    data = pd.DataFrame(data)
+    print(data.head())
+    data.to_csv("data.csv", index=False, encoding='utf-8')
+
